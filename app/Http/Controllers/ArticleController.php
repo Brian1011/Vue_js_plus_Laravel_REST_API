@@ -9,7 +9,11 @@ class ArticleController extends Controller
 {
     //all records
     public function index(){
-        return Article::all();
+        //perform pagination
+        $articles = Article::paginate(15);
+        
+        //return data that is paginated
+        return $articles;
     }
 
     //single record
