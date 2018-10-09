@@ -10,8 +10,8 @@ class ArticleController extends Controller
     //all records
     public function index(){
         //perform pagination
-        $articles = Article::paginate(15);
-        
+        $articles = Article::orderBy('created_at','desc')->paginate(5);
+
         //return data that is paginated
         return $articles;
     }
